@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import GitCommand, GitLesson, GitLessonStep, GitQuiz
-from .serializers import GitCommandSerializer, GitLessonSerializer, GitLessonStepSerializer, GitQuizSerializer
+from .models import GitCommand, GitLesson, GitQuiz
+from .serializers import GitCommandSerializer, GitLessonSerializer, GitQuizSerializer
 
 class GitCommandViewSet(viewsets.ModelViewSet):
     queryset = GitCommand.objects.all()
@@ -9,10 +9,6 @@ class GitCommandViewSet(viewsets.ModelViewSet):
 class GitLessonViewSet(viewsets.ModelViewSet):
     queryset = GitLesson.objects.all()
     serializer_class = GitLessonSerializer
-
-class GitLessonStepViewSet(viewsets.ModelViewSet):
-    queryset = GitLessonStep.objects.all()
-    serializer_class = GitLessonStepSerializer
 
 class GitQuizViewSet(viewsets.ModelViewSet):
     queryset = GitQuiz.objects.all()

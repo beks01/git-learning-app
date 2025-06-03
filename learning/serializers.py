@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import GitCommand, GitLesson, GitLessonStep, GitQuiz
+from .models import GitCommand, GitLesson, GitQuiz
 
 
 class GitCommandSerializer(serializers.ModelSerializer):
@@ -8,15 +8,7 @@ class GitCommandSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class GitLessonStepSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = GitLessonStep
-        fields = '__all__'
-
-
 class GitLessonSerializer(serializers.ModelSerializer):
-    steps = GitLessonStepSerializer(many=True, read_only=True)
-
     class Meta:
         model = GitLesson
         fields = '__all__'

@@ -22,7 +22,7 @@ class GitCommand(models.Model):
 class GitLesson(models.Model):
     title = models.CharField(max_length=200)
     language = models.CharField(max_length=10, choices=LANGUAGE_CHOICES, default='en')
-    steps = models.JSONField(help_text="Список шагов урока (как массив объектов с полями step_number, description, explanation и example)")
+    steps = models.JSONField(default=list, help_text="Список шагов урока в формате массива объектов")
 
     def __str__(self):
         return f"{self.title} ({self.language})"
